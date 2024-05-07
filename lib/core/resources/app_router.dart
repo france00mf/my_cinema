@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_cinema/core/presentation/pages/main_page.dart';
 
 import 'package:my_cinema/core/resources/app_routes.dart';
 
