@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_cinema/core/resources/app_router.dart';
 import 'package:my_cinema/core/resources/app_routes.dart';
 import 'package:my_cinema/core/resources/app_strings.dart';
 import 'package:my_cinema/core/resources/app_values.dart';

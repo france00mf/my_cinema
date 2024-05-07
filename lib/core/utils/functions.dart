@@ -186,12 +186,12 @@ void navigateToDetailsView(BuildContext context, Media media) {
   if (media.isMovie) {
     context.pushNamed(
       AppRoutes.movieDetailsRoute,
-      queryParameters: {'movieId': media.tmdbID.toString()},
+      params: {'movieId': media.tmdbID.toString()},
     );
   } else {
     context.pushNamed(
       AppRoutes.tvShowDetailsRoute,
-      queryParameters: {'tvShowId': media.tmdbID.toString()},
+      params: {'tvShowId': media.tmdbID.toString()},
     );
   }
 }

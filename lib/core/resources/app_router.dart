@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_cinema/core/presentation/pages/main_page.dart';
 
 import 'package:my_cinema/core/resources/app_routes.dart';
+import 'package:my_cinema/move/presenter/views/movies_view.dart';
 
 const String moviesPath = '/movies';
 const String movieDetailsPath = 'movieDetails/:movieId';

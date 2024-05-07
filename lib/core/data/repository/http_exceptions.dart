@@ -46,6 +46,7 @@ class MakeRequest implements IMakeRequest{
        print("Unknow Error");
        break;
     }
+    return data;
    
   }
 }

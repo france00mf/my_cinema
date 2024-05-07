@@ -31,7 +31,7 @@ class Media extends Equatable {
     required this.voteAverage,
     required this.releaseDate,
     required this.overview,
-     this.isMovie,
+    required this.isMovie,
   });
 
   factory Media.fromMediaDetails(MediaDetails mediaDetails) {

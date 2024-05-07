@@ -10,7 +10,7 @@ class MovieModel extends Media {
     required super.voteAverage,
     required super.releaseDate,
     required super.overview,
-    // required super.isMovie,
+    required super.isMovie,
   });
 
   factory MovieModel.fromJson(Map<String, dynamic> json) => MovieModel(
@@ -21,6 +21,6 @@ class MovieModel extends Media {
         voteAverage: double.parse((json['vote_average']).toStringAsFixed(1)),
         releaseDate: getDate(json['release_date']),
         overview: json['overview'] ?? '',
-        // isMovie: true,
+        isMovie: true,
       );
 }
