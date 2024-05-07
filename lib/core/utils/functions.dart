@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_cinema/core/data/network/api_constants.dart';
 import 'package:my_cinema/core/domain/entities/media.dart';
 import 'package:my_cinema/core/presentation/components/section_listview.dart';
+import 'package:my_cinema/core/presentation/components/section_listview_card.dart';
 import 'package:my_cinema/core/presentation/components/section_title.dart';
 import 'package:my_cinema/core/resources/app_colors.dart';
 import 'package:my_cinema/core/resources/app_routes.dart';
