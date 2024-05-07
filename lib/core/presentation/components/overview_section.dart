@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_cinema/core/resources/app_strings.dart';
+import 'package:my_cinema/core/resources/app_values.dart';
 import 'package:readmore/readmore.dart';
 
 
