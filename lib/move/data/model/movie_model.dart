@@ -1,5 +1,7 @@
-import 'package:movies_app/core/domain/entities/media.dart';
-import 'package:movies_app/core/utils/functions.dart';
+
+
+import '../../../core/domain/entities/media.dart';
+import '../../../core/utils/functions.dart';
 
 class MovieModel extends Media {
   const MovieModel({

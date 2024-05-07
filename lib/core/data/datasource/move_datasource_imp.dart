@@ -4,6 +4,7 @@ import 'package:my_cinema/core/data/error/exceptions.dart';
 import 'package:my_cinema/core/data/model/movie_model.dart';
 import 'package:my_cinema/core/data/network/api_constants.dart';
 import 'package:my_cinema/core/data/network/error_message_model.dart';
+import 'package:my_cinema/move/data/model/movie_details_model.dart';
 
 class MoviesRemoteDataSourceImpl extends MoviesRemoteDataSource {
   @override
