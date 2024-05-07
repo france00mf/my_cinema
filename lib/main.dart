@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_cinema/core/resources/app_router.dart';
 import 'package:my_cinema/core/resources/app_strings.dart';
 import 'package:my_cinema/core/resources/app_theme.dart';
+import 'package:my_cinema/core/services/service_locator.dart';
 
 
 void main() async {
