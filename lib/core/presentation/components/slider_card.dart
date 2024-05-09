@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_cinema/core/domain/entities/media.dart';
+import 'package:my_cinema/core/presentation/components/slider_card_image.dart';
+import 'package:my_cinema/core/resources/app_colors.dart';
+import 'package:my_cinema/core/resources/app_constants.dart';
+import 'package:my_cinema/core/resources/app_values.dart';
+import 'package:my_cinema/core/utils/functions.dart';
 
 
 class SliderCard extends StatelessWidget {
