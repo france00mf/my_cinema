@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:my_cinema/core/domain/entities/media.dart';
+import 'package:my_cinema/core/presentation/utils/enums.dart';
 
 class MoviesState extends Equatable {
   final List<List<Media>> movies;
