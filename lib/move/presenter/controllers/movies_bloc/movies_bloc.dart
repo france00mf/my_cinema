@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_cinema/core/domain/usecase/base_use_case.dart';
 import 'package:my_cinema/core/presentation/utils/enums.dart';
+import 'package:my_cinema/move/domain/usecases/get_movies_usecase.dart';
 import 'package:my_cinema/move/presenter/controllers/movies_bloc/movies_event.dart';
 import 'package:my_cinema/move/presenter/controllers/movies_bloc/movies_state.dart';
 

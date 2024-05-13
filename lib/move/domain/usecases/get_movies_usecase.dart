@@ -2,6 +2,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:my_cinema/core/data/error/failure.dart';
 import 'package:my_cinema/core/domain/entities/media.dart';
+import 'package:my_cinema/move/domain/repository/movies_repository.dart';
 
 import '../../../core/domain/usecase/base_use_case.dart';
 
