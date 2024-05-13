@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_cinema/core/domain/entities/media_details.dart';
 
-
+part 'media.g.dart';
 
 @HiveType(typeId: 1)
 class Media extends Equatable {

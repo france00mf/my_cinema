@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:my_cinema/core/domain/entities/media.dart';
 import 'package:my_cinema/core/resources/app_router.dart';
 import 'package:my_cinema/core/resources/app_strings.dart';
 import 'package:my_cinema/core/resources/app_theme.dart';
 import 'package:my_cinema/core/services/service_locator.dart';
+import 'package:my_cinema/move/presenter/controllers/movies_bloc/movies_bloc.dart';
 
 
 void main() async {
+   await Hive.initFlutter();
+  Hive.registerAdapter(MediaAdapter());
+  await Hive.openBox('items');
   ServiceLocator.init();
   runApp(
-   MyApp(),
+    BlocProvider(
+      create: (context)=> sl<MoviesBloc>(),
+      child: MyApp(),
+    )
+  
   );
 }
 
