@@ -19,14 +19,10 @@ class MoviesView extends StatelessWidget {
 
 class MoviesWidget extends StatelessWidget {
   final List<Media> nowPlayingMovies;
-  final List<Media> popularMovies;
-  final List<Media> topRatedMovies;
 
   const MoviesWidget({
     super.key,
     required this.nowPlayingMovies,
-    required this.popularMovies,
-    required this.topRatedMovies,
   });
 
   @override
