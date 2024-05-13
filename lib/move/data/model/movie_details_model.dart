@@ -1,7 +1,9 @@
 
 
+import 'package:my_cinema/core/data/model/movie_model.dart';
 import 'package:my_cinema/core/utils/functions.dart';
 import 'package:my_cinema/move/data/model/cast_model.dart';
+import 'package:my_cinema/move/data/model/review_model.dart';
 
 import '../../../core/domain/entities/media_details.dart';
 

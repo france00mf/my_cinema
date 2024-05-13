@@ -1,10 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:my_cinema/core/domain/entities/episode.dart';
-// import 'package:movies_app/core/domain/entities/media.dart';
-// import 'package:movies_app/movies/domain/entities/cast.dart';
-// import 'package:movies_app/movies/domain/entities/review.dart';
-// import 'package:movies_app/tv_shows/domain/entities/episode.dart';
-// import 'package:movies_app/tv_shows/domain/entities/season.dart';
+import 'package:my_cinema/core/domain/entities/media.dart';
+import 'package:my_cinema/move/domain/entities/cast.dart';
+import 'package:my_cinema/move/domain/entities/review.dart';
+import 'package:my_cinema/tv_series/domain/entities/season.dart';
 
 // ignore: must_be_immutable
 class MediaDetails extends Equatable {
@@ -22,10 +21,10 @@ class MediaDetails extends Equatable {
   final double voteAverage;
   final String voteCount;
   final String trailerUrl;
-  // final List<Cast>? cast;
-  // final List<Review>? reviews;
-  // final List<Season>? seasons;
-  // final List<Media> similar;
+  final List<Cast>? cast;
+  final List<Review>? reviews;
+  final List<Season>? seasons;
+  final List<Media> similar;
   bool isAdded;
 
   MediaDetails({
@@ -43,10 +42,10 @@ class MediaDetails extends Equatable {
     required this.voteAverage,
     required this.voteCount,
     required this.trailerUrl,
-    // this.cast,
-    // this.reviews,
-    // this.seasons,
-    // required this.similar,
+    this.cast,
+    this.reviews,
+    this.seasons,
+    required this.similar,
     this.isAdded = false,
   });
 
@@ -63,7 +62,7 @@ class MediaDetails extends Equatable {
         voteAverage,
         voteCount,
         trailerUrl,
-        // similar,
+        similar,
         isAdded,
       ];
 }
