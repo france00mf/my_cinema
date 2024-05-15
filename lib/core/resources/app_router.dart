@@ -29,7 +29,29 @@ class AppRouter {
             pageBuilder: (context, state) => const NoTransitionPage(
               child: MoviesView(),
             ),
-          
+          ),
+               GoRoute(
+            name: AppRoutes.tvShowsRoute,
+            path: tvShowsPath,
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: CupertinoPageScaffold(child: Center()),
+            ),
+          ),
+
+            GoRoute(
+            name: AppRoutes.searchRoute,
+            path: searchPath,
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: CupertinoPageScaffold(child: Center()),
+            ),
+          ),
+
+             GoRoute(
+            name: AppRoutes.watchlistRoute,
+            path: watchlistPath,
+            pageBuilder: (context, state) => const NoTransitionPage(
+               child: CupertinoPageScaffold(child: Center()),
+            ),
           ),
        
         ],
