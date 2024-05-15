@@ -12,6 +12,7 @@ import 'package:my_cinema/move/presenter/controllers/movies_bloc/movies_bloc.dar
 void main() async {
    await Hive.initFlutter();
   Hive.registerAdapter(MediaAdapter());
+  //Database
   await Hive.openBox('items');
   ServiceLocator.init();
   runApp(
