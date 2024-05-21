@@ -14,6 +14,7 @@ class MoviesRemoteDataSourceImpl extends MoviesRemoteDataSource {
     final response = Future.wait(
       [
         getNowPlayingMovies(),
+        getPopularMovies(),
       ],
       eagerError: true,
     );
@@ -32,6 +33,19 @@ class MoviesRemoteDataSourceImpl extends MoviesRemoteDataSource {
       );
     }
   }
-
+  
+  @override
+  Future<List<MovieModel>> getPopularMovies() async{
+      final response = await Dio().get(ApiConstants.popularMoviesPath);
+    if (response.statusCode == 200) {
+      return List<MovieModel>.from((response.data['results'] as List)
+          .map((e) => MovieModel.fromJson(e)));
+    } else {
+      throw ServerException(
+        errorMessageModel: ErrorMessageModel.fromJson(response.data),
+      );
+    }
+  }
 
 }
+
