@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_cinema/core/domain/entities/media_details.dart';
 import 'package:my_cinema/core/presentation/utils/enums.dart';
+import 'package:my_cinema/move/domain/usecases/get_movie_details_usecase.dart';
 
 part 'movie_details_event.dart';
 part 'movie_details_state.dart';
