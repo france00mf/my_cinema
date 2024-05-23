@@ -185,7 +185,7 @@ String getTrailerUrl(Map<String, dynamic> json) {
 void navigateToDetailsView(BuildContext context, Media media) {
   if (media.isMovie) {
     context.pushNamed(
-      AppRoutes.movieDetailsRoute,
+      AppRoutes.movieDetailsRoute, 
       params: {'movieId': media.tmdbID.toString()},
     );
   } else {
