@@ -6,7 +6,6 @@ class GetSeasonDetailsUseCase {
   final  _baseTVShowsRepository;
 
   GetSeasonDetailsUseCase(this._baseTVShowsRepository);
-  @override
   call(SeasonDetailsParams p) async {
     return await _baseTVShowsRepository.getSeasonDetails(p);
   }

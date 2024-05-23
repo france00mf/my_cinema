@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_cinema/core/presentation/pages/main_page.dart';
 
 import 'package:my_cinema/core/resources/app_routes.dart';
+import 'package:my_cinema/move/presenter/views/movie_details_view.dart';
 import 'package:my_cinema/move/presenter/views/movies_view.dart';
 
 const String moviesPath = '/movies';
@@ -29,6 +30,15 @@ class AppRouter {
             pageBuilder: (context, state) => const NoTransitionPage(
               child: MoviesView(),
             ),
+            routes: [
+              GoRoute(
+                path: movieDetailsPath,
+                name: AppRoutes.movieDetailsRoute,
+                pageBuilder: (context, state)=>  NoTransitionPage(child: 
+                MovieDetailsView(movieId: int.parse(state.params['movieId']!)),
+                )
+                )
+            ]
           ),
                GoRoute(
             name: AppRoutes.tvShowsRoute,
