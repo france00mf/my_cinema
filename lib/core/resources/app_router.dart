@@ -5,6 +5,7 @@ import 'package:my_cinema/core/presentation/pages/main_page.dart';
 import 'package:my_cinema/core/resources/app_routes.dart';
 import 'package:my_cinema/move/presenter/views/movie_details_view.dart';
 import 'package:my_cinema/move/presenter/views/movies_view.dart';
+import 'package:my_cinema/move/presenter/views/popular_movies_view.dart';
 
 const String moviesPath = '/movies';
 const String movieDetailsPath = 'movieDetails/:movieId';
@@ -37,6 +38,12 @@ class AppRouter {
                 pageBuilder: (context, state)=>  NoTransitionPage(child: 
                 MovieDetailsView(movieId: int.parse(state.params['movieId']!)),
                 )
+                ),
+                GoRoute(
+                  path: popularMoviesPath,
+                  name: AppRoutes.popularMoviesRoute,
+                  pageBuilder: (context, state)=> const NoTransitionPage(child: 
+                  PopularMoviesView())
                 )
             ]
           ),
