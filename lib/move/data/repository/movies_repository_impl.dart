@@ -39,4 +39,17 @@ class MoviesRepositoryImpl extends MoviesRespository {
     }
   }
 
+    @override
+  Future<Either<Failure, List<Media>>> getAllPopularMovies(int page) async {
+    try {
+      final result =
+          await _baseMoviesRemoteDataSource.getAllPopularMovies(page);
+      return Right(result);
+    } on ServerException catch (failure) {
+      return Left(ServerFailure(failure.errorMessageModel.statusMessage));
+    } on DioError catch (failure) {
+      return Left(ServerFailure(failure.message!));
+    }
+  }
+
 }
