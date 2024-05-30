@@ -7,4 +7,5 @@ abstract class MoviesRemoteDataSource {
   Future<MovieDetailsModel> getMovieDetails(int movieId);
   Future<List<MovieModel>> getPopularMovies();
   Future<List<MovieModel>> getAllPopularMovies(int page);
+  Future<List<MovieModel>> getAllTopRatedMovies(int page);
 }

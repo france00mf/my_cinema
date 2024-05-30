@@ -73,6 +73,20 @@ class MoviesRemoteDataSourceImpl extends MoviesRemoteDataSource {
       );
     }
   }
+  
+  @override
+  Future<List<MovieModel>> getAllTopRatedMovies(int page) async {
+    final response =
+        await Dio().get(ApiConstants.getAllTopRatedMoviesPath(page));
+    if (response.statusCode == 200) {
+      return List<MovieModel>.from((response.data['results'] as List)
+          .map((e) => MovieModel.fromJson(e)));
+    } else {
+      throw ServerException(
+        errorMessageModel: ErrorMessageModel.fromJson(response.data),
+      );
+    }
+  }
 
 }
 
