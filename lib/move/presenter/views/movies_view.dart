@@ -38,6 +38,7 @@ class MoviesView extends StatelessWidget {
                   return MoviesWidget(
                     nowPlayingMovies: state.movies[0],
                     popularMovies: state.movies[1],
+                    topRatedMovies: state.movies[2],
                   );
                 case RequestStatus.error:
                   return   ErrorScreen(
@@ -56,11 +57,12 @@ class MoviesView extends StatelessWidget {
 class MoviesWidget extends StatelessWidget {
   final List<Media> nowPlayingMovies;
   final List<Media> popularMovies;
+  final List<Media> topRatedMovies;
 
   const MoviesWidget({
     super.key,
     required this.nowPlayingMovies,
-    required this.popularMovies,
+    required this.popularMovies, required this.topRatedMovies,
   });
 
   @override
@@ -92,13 +94,21 @@ class MoviesWidget extends StatelessWidget {
             },
           ),
           
-          SectionHeader(title: AppStrings.noResults, onSeeAllTap: (){
-            context.goNamed(AppRoutes.topRatedMoviesRoute);
-          }),
+            SectionHeader(
+            title: AppStrings.topRatedMovies,
+            onSeeAllTap: () {
+              context.goNamed(AppRoutes.topRatedMoviesRoute);
+            },
+          ),
 
           // SectionListView(height: height, itemCount: itemCount, itemBuilder: itemBuilder),
-
-
+             SectionListView(
+            height: AppSize.s240,
+            itemCount: topRatedMovies.length,
+            itemBuilder: (context, index) {
+              return SectionListViewCard(media: topRatedMovies[index]);
+            },
+          ),
         ],
       ),
     );
