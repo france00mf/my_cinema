@@ -7,6 +7,8 @@ import 'package:my_cinema/move/domain/usecases/get_movies_usecase.dart';
 import 'package:my_cinema/move/presenter/controllers/movies_bloc/movies_event.dart';
 import 'package:my_cinema/move/presenter/controllers/movies_bloc/movies_state.dart';
 
+
+
 class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
   final GetMoviesUseCase _getMoviesUseCase;
 
