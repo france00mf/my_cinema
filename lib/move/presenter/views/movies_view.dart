@@ -91,6 +91,14 @@ class MoviesWidget extends StatelessWidget {
               return SectionListViewCard(media: popularMovies[index]);
             },
           ),
+          
+          SectionHeader(title: AppStrings.noResults, onSeeAllTap: (){
+            context.goNamed(AppRoutes.topRatedMoviesRoute);
+          }),
+
+          // SectionListView(height: height, itemCount: itemCount, itemBuilder: itemBuilder),
+
+
         ],
       ),
     );
