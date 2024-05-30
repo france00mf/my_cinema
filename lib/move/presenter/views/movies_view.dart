@@ -100,8 +100,6 @@ class MoviesWidget extends StatelessWidget {
               context.goNamed(AppRoutes.topRatedMoviesRoute);
             },
           ),
-
-          // SectionListView(height: height, itemCount: itemCount, itemBuilder: itemBuilder),
              SectionListView(
             height: AppSize.s240,
             itemCount: topRatedMovies.length,
