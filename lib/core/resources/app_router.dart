@@ -7,6 +7,8 @@ import 'package:my_cinema/move/presenter/views/movie_details_view.dart';
 import 'package:my_cinema/move/presenter/views/movies_view.dart';
 import 'package:my_cinema/move/presenter/views/popular_movies_view.dart';
 
+import '../../search/presenter/view/search_view.dart';
+
 const String moviesPath = '/movies';
 const String movieDetailsPath = 'movieDetails/:movieId';
 const String popularMoviesPath = 'popularMovies';
@@ -58,8 +60,8 @@ class AppRouter {
             GoRoute(
             name: AppRoutes.searchRoute,
             path: searchPath,
-            pageBuilder: (context, state) => const NoTransitionPage(
-              child: CupertinoPageScaffold(child: Center()),
+            pageBuilder: (context, state) =>  NoTransitionPage(
+              child: SearchView(),
             ),
           ),
 
