@@ -1,2 +1,0 @@
-
-class SearchResultItemModel extends SearchResultItemModel{}
