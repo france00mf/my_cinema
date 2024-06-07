@@ -9,7 +9,7 @@ import '../model/search_result_item_model.dart';
 
 class SearchRemoteDataSourceImpl implements SearchDatasource{
   @override
-  Future<List> search(String title) async{
+  Future<List<SearchResultItemModel>> search(String title) async{
       final response = await Dio().get(ApiConstants.getSearchPath(title));
       if(response.statusCode==200){
           return List<SearchResultItemModel>.from(
