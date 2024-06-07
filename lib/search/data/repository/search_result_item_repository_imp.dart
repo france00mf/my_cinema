@@ -17,9 +17,9 @@ class SearchResultItemRepositoryImp implements SearchResultItemRepository {
       final result = await  _baseSearchDatasource.search(search);
       return Right(result);
     } on ServerException catch(failure){
-        throw "";
+        return Left(ServerFailure(failure.errorMessageModel.statusMessage));
     } on DioError catch (e) {
-        throw "";
+        return Left(ServerFailure(e.message!));
     }
   }
 
