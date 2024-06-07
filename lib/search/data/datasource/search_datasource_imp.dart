@@ -18,7 +18,7 @@ class SearchRemoteDataSourceImpl implements SearchDatasource{
       } else {
         throw ServerException(errorMessageModel: 
           ErrorMessageModel.fromJson(response.data)
-        )
+        );
       }
     
   }
