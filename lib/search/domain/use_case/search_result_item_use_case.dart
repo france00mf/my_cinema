@@ -7,10 +7,10 @@ import 'package:my_cinema/search/domain/repository/search_result_item_repository
 class SearchResultItemUseCase implements BaseUseCase{
   final SearchResultItemRepository baseSearchRepository;
   SearchResultItemUseCase(this.baseSearchRepository);
-  
+
   @override
-  Future<Either<Failure, dynamic>> call(p) {
-    throw UnimplementedError();
+  Future<Either<Failure, dynamic>> call(p) async{
+    return await baseSearchRepository.search(p);
   }
 
 }
