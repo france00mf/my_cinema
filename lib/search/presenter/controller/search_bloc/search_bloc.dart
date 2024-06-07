@@ -4,14 +4,29 @@ import 'package:my_cinema/search/domain/use_case/search_result_item_use_case.dar
 import 'package:my_cinema/search/presenter/controller/search_bloc/search_event.dart';
 import 'package:my_cinema/search/presenter/controller/search_bloc/search_state.dart';
 
+const _duration = Duration(milliseconds: 400);
+
+EventTransformer<Event> debounce<Event>(Duration duration){
+  return (events,mapper) => events.debounce(duration).switchMap(mapper);
+}
 class SearchBloc extends Bloc<SearchEvent, SearchState>{
   SearchBloc(this.baseSearchUseCase):super(const SearchState()){
-    on<GetSearchEvent>(_getSearchResults,transformer: deboundce(_duration));
-  };
+    on<GetSearchEvent>(_getSearchResults,transformer: debounce(_duration));
+  }
 
   final SearchResultItemUseCase baseSearchUseCase;
 
-  Future<void> _getSearchResults()async{
+  Future<void> _getSearchResults(
+    GetSearchEvent event, Emitter<SearchState> emit
+  )async{
+
+    if(event.title.trim().isEmpty){
+      return emit(
+        state.copyWith(
+          status: SearchRequestStatus.empty
+        )
+      );
+    }
 
   }
 }
