@@ -1,7 +1,17 @@
 import 'package:equatable/equatable.dart';
 
-class SearchEvent extends Equatable{
+abstract class SearchEvent extends Equatable{
+  
+}
+
+class GetSearchEvent extends SearchEvent{
+  final String title;
+
+  GetSearchEvent(this.title);
+  
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [
+    title
+  ];
 }
