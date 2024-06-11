@@ -28,5 +28,35 @@ class SearchBloc extends Bloc<SearchEvent, SearchState>{
       );
     }
 
+    emit(
+      state.copyWith(
+        status: SearchRequestStatus.loading,
+      )
+    );
+
+    final result = await _searchUseCase(event.title);
+    result.fold(
+      (l) => emit(
+        state.copyWith(
+          status: SearchRequestStatus.error,
+          message: l.message
+        )
+      ),
+      (r){
+        if(r.isEmpty){
+          emit(state.copyWith(
+            status: SearchRequestStatus.noResults
+          ));
+        }else{
+          emit(
+            state.copyWith(
+              status: SearchRequestStatus.loaded,
+              searchResults: r
+            )
+          );
+        }
+      }
+    );
+
   }
 }
