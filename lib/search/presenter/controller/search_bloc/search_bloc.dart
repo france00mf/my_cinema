@@ -34,7 +34,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState>{
       )
     );
 
-    final result = await _searchUseCase(event.title);
+    final result = await baseSearchUseCase(event.title);
     result.fold(
       (l) => emit(
         state.copyWith(
