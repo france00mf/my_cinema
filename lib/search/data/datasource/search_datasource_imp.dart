@@ -11,6 +11,7 @@ class SearchRemoteDataSourceImpl implements SearchDatasource{
   @override
   Future<List<SearchResultItemModel>> search(String title) async{
       final response = await Dio().get(ApiConstants.getSearchPath(title));
+      print(response.data.toString());
       if(response.statusCode==200){
           return List<SearchResultItemModel>.from(
           (  response.data["results"] as List
