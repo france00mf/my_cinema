@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_cinema/search/domain/use_case/search_result_item_use_case.dart';
 import 'package:my_cinema/search/presenter/controller/search_bloc/search_event.dart';
 import 'package:my_cinema/search/presenter/controller/search_bloc/search_state.dart';
+import 'package:stream_transform/stream_transform.dart';
 
 const _duration = Duration(milliseconds: 400);
 
