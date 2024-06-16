@@ -9,6 +9,7 @@ import 'package:my_cinema/search/data/datasource/search_datasource_imp.dart';
 import 'package:my_cinema/search/presenter/controller/search_bloc/search_bloc.dart';
 import 'package:my_cinema/search/presenter/controller/search_bloc/search_state.dart';
 import 'package:my_cinema/search/presenter/view/components/search_field.dart';
+import 'package:my_cinema/search/presenter/view/components/search_text.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
