@@ -1,8 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_cinema/core/presentation/components/error_text.dart';
+import 'package:my_cinema/core/presentation/components/loading_indicator.dart';
 import 'package:my_cinema/core/resources/app_values.dart';
 import 'package:my_cinema/search/data/datasource/search_datasource.dart';
 import 'package:my_cinema/search/data/datasource/search_datasource_imp.dart';
+import 'package:my_cinema/search/presenter/controller/search_bloc/search_bloc.dart';
+import 'package:my_cinema/search/presenter/controller/search_bloc/search_state.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
@@ -12,13 +17,9 @@ class SearchView extends StatefulWidget {
 }
 
 class _SearchViewState extends State<SearchView> {
-  SearchRemoteDataSourceImpl searchDataSource= SearchRemoteDataSourceImpl();
   
   @override
   void initState() {
-    // TODO: implement initState
-    var show=searchDataSource.search("One Piece");  
-    print(show.toString());
     super.initState();  
   }
 
@@ -33,7 +34,22 @@ class _SearchViewState extends State<SearchView> {
         ),
         child: Column(
           children: [
-            Center(child: Text("data", style: TextStyle(color: Colors.white),),),
+            BlocBuilder<SearchBloc, SearchState>(
+              builder: (context, state) {
+                switch(state.status){
+                  case SearchRequestStatus.empty:
+                   return const SearchText();
+                  case SearchRequestStatus.loading:
+                    return const Expanded(child: LoadingIndicator());
+                  case SearchRequestStatus.loaded:
+                    return SearchGridView(results: state.searchResults);
+                  case SearchRequestStatus.error:
+                    return const Expanded(child: ErrorText());
+                  case SearchRequestStatus.noResults:
+                    return const NoResults();
+                };
+              },
+            )
           ],
         ),
       ), 
