@@ -25,3 +25,6 @@ class SearchGridView extends StatelessWidget{
   }
 
 }
+
+class GridViewCard {
+}
