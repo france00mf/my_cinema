@@ -1,16 +1,14 @@
-import 'package:equatable/equatable.dart';
-
+part of 'search_bloc.dart';
 abstract class SearchEvent extends Equatable{
-  
+  const SearchEvent();
 }
 
 class GetSearchEvent extends SearchEvent{
   final String title;
 
-  GetSearchEvent(this.title);
+  const GetSearchEvent(this.title);
   
   @override
-  // TODO: implement props
   List<Object?> get props => [
     title
   ];

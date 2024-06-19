@@ -1,6 +1,5 @@
-import 'package:equatable/equatable.dart';
-import 'package:my_cinema/search/domain/entities/search_result_item_entity.dart';
 
+part of 'search_bloc.dart';
 
 enum SearchRequestStatus{empty, loading, loaded, error,noResults}
 
@@ -29,7 +28,6 @@ class SearchState extends Equatable{
     );
   }
   @override
-  // TODO: implement props
   List<Object?> get props => [
         searchResults,
         status,

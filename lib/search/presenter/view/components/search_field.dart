@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_cinema/core/resources/app_colors.dart';
 import 'package:my_cinema/core/resources/app_values.dart';
 import 'package:my_cinema/search/presenter/controller/search_bloc/search_bloc.dart';
-import 'package:my_cinema/search/presenter/controller/search_bloc/search_event.dart';
 
 class SearchField extends StatefulWidget {
   const SearchField({super.key});
