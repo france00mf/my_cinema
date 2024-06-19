@@ -50,7 +50,7 @@ class _SearchViewState extends State<SearchView> {
                     return const Expanded(child: ErrorText());
                   case SearchRequestStatus.noResults:
                     return const NoResults();
-                };
+                }
               },
             )
           ],
