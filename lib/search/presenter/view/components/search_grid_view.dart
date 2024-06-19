@@ -14,7 +14,8 @@ class SearchGridView extends StatelessWidget{
     // TODO: implement build
     return Expanded(child: GridView.builder(
       itemCount: results.length,
-      
+      itemBuilder: (context,index)=>GridViewCard(item: results[index]),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 12, childAspectRatio: .55),
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(vertical: AppPadding.p12),
       
