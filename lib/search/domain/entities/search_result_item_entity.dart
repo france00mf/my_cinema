@@ -8,7 +8,7 @@ class SearchResultItemEntity extends Equatable{
 
   const SearchResultItemEntity({required this.tmdbID, required this.posterUrl, required this.title, required this.isMovie});
   @override
-  List<Object?> get props => throw [
+  List<Object?> get props => [
         tmdbID,
         posterUrl,
         title,
