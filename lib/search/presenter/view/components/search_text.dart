@@ -7,12 +7,12 @@ class SearchText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextTheme = Theme.of(context).textTheme;
+    final textTheme = Theme.of(context).textTheme;
     return Expanded(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(AppStrings.search),
+          Text(AppStrings.search, style: textTheme.titleMedium,),
           Padding(padding: EdgeInsets.only(top: AppPadding.p6),
           child: Text(
             AppStrings.searchText,
