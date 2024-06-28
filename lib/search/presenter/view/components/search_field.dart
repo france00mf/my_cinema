@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_cinema/core/resources/app_colors.dart';
+import 'package:my_cinema/core/resources/app_strings.dart';
 import 'package:my_cinema/core/resources/app_values.dart';
 import 'package:my_cinema/search/presenter/controller/search_bloc/search_bloc.dart';
 
@@ -39,7 +40,24 @@ class _SearchFieldState extends State<SearchField> {
               color: AppColors.primaryText,
             ),
             borderRadius: BorderRadius.circular(AppSize.s8),
-          )),
+          ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: AppColors.primaryText),
+              borderRadius: BorderRadius.circular(AppSize.s8)
+            ),
+            prefixIcon: GestureDetector(
+              onTap:() {
+                _textController.text="";
+                context.read<SearchBloc>().add(const GetSearchEvent(''));
+              },
+              child: const Icon(
+                Icons.clear_rounded,
+                color: AppColors.primaryText,
+              )
+            ),
+            hintText: AppStrings.searchHint,
+            hintStyle: textTheme.bodyLarge
+          ),
       ));
   }
 }
