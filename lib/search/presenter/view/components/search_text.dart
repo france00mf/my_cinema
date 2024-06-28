@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_cinema/core/resources/app_strings.dart';
+import 'package:my_cinema/core/resources/app_values.dart';
 
 class SearchText extends StatelessWidget {
   const SearchText({super.key});
@@ -8,7 +10,16 @@ class SearchText extends StatelessWidget {
     final TextTheme = Theme.of(context).textTheme;
     return Expanded(
       child: Column(
-        children: [],
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(AppStrings.search),
+          Padding(padding: EdgeInsets.only(top: AppPadding.p6),
+          child: Text(
+            AppStrings.searchText,
+            textAlign: TextAlign.center
+          ),
+          )
+        ],
       ),
     );
   }
