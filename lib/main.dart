@@ -13,7 +13,7 @@ void main() async {
    await Hive.initFlutter();
   Hive.registerAdapter(MediaAdapter());
   //Database
-  await Hive.openBox('items');
+  await Hive.openBox('movies');
   ServiceLocator.init();
   runApp(
     BlocProvider(
