@@ -5,21 +5,18 @@ import 'package:my_cinema/watchlist/data/model/watchlist_item_model.dart';
 class WatchListDatasourceImp implements WatchListDatasource{
   final Box _box = Hive.box('movies');
   @override
-  Future<int> addWatchListItem(WatchListItemModel item) {
-    // TODO: implement addWatchListItem
-    throw UnimplementedError();
+  Future<int> addWatchListItem(WatchListItemModel item) async{
+    return await _box.add(item);
   }
 
   @override
   Future<List<WatchListItemModel>> getWatchListItems() {
-    // TODO: implement getWatchListItems
-    throw UnimplementedError();
+    return _box.values.map((e) => WatchListItemModel.fromEntity(e)).toList().reversed.toList();
   }
 
   @override
   Future<int> isItemAdded(int tmdbId) {
-    // TODO: implement isItemAdded
-    throw UnimplementedError();
+    return _box.add(item);
   }
 
   @override
