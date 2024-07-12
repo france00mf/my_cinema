@@ -30,15 +30,23 @@ class WatchListRepositoryImpl extends WatchlistRepository{
   }
 
   @override
-  Future<Either<Failure, List<Media>>> getWatchListItems() {
-    // TODO: implement getWatchListItems
-    throw UnimplementedError();
+  Future<Either<Failure, List<Media>>> getWatchListItems() async {
+    final result = (await _baseWatchListDataSource.getWatchListItems());
+    try {
+        return Right(result);
+    } on HiveError catch (e) {  
+        return Left(DatabaseFailure(e.message));
+    }
   }
 
   @override
-  Future<Either<Failure, Unit>> removeWatchListItem(int index) {
-    // TODO: implement removeWatchListItem
-    throw UnimplementedError();
+  Future<Either<Failure, Unit>> removeWatchListItem(int index)async {
+      try {
+        await _baseWatchListDataSource.removeWatchListItem(index);
+        return const Right(unit);
+      } on HiveError catch (e) {
+        return Left(DatabaseFailure(e.message));
+      }
   }
 
 }
