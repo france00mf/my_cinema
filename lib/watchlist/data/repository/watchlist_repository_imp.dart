@@ -24,9 +24,15 @@ class WatchListRepositoryImpl extends WatchlistRepository{
   }
 
   @override
-  Future<Either<Failure, int>> checkIfItemAdded(int tmdbId) {
-    // TODO: implement checkIfItemAdded
-    throw UnimplementedError();
+  Future<Either<Failure, int>> checkIfItemAdded(int tmdbId) async{
+    try {
+        final result = await _baseWatchListDataSource.isItemAdded(
+          tmdbId
+        );
+        return Right(result);
+    } on HiveError catch (e) {
+      return Left(DatabaseFailure(e.message));
+    }
   }
 
   @override
