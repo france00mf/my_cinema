@@ -10,18 +10,19 @@ class WatchListDatasourceImp implements WatchListDatasource{
   }
 
   @override
-  Future<List<WatchListItemModel>> getWatchListItems() {
+  Future<List<WatchListItemModel>> getWatchListItems() async{
     return _box.values.map((e) => WatchListItemModel.fromEntity(e)).toList().reversed.toList();
   }
 
   @override
-  Future<int> isItemAdded(int tmdbId) {
-    return _box.add(item);
+  Future<int> isItemAdded(int tmdbId) async{
+    return _box.values.toList().indexWhere((e) => e.tmdbId == tmdbId);
   }
 
   @override
   Future<void> removeWatchListItem(int index) async{
       return _box.deleteAt(index);
   }
+
  
 }
