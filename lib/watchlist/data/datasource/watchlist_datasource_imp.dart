@@ -20,9 +20,8 @@ class WatchListDatasourceImp implements WatchListDatasource{
   }
 
   @override
-  Future<void> removeWatchListItem(int index) {
-    // TODO: implement removeWatchListItem
-    throw UnimplementedError();
+  Future<void> removeWatchListItem(int index) async{
+      return _box.deleteAt(index);
   }
  
 }
